@@ -1,0 +1,338 @@
+﻿    <!DOCTYPE html><!--HTML5 doctype-->
+    <html>
+    <head>
+         <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145315576-1"></script>
+        <script>
+         window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+
+         gtag('config', 'UA-145315576-1');
+        </script>
+        <title>I Can Ride the Hoverboard</title>
+        
+
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+        <style type="text/css">
+            /* Prevent copy paste for all elements except text fields */
+            *  { -webkit-user-select:none; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
+            input, textarea  { -webkit-user-select:text; }
+            body { background-color:white; color:black }
+        </style>
+
+        <link rel="stylesheet" href="jquery.mobile-1.4.3.css">
+
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="jquery.mobile-1.4.3.js"></script>
+        <script src="jquery-1.11.1.min.js"></script>
+
+        <script src="main.js?v=3"></script>
+        <link rel="stylesheet" href="main.css">
+
+       
+        <style type="text/css">
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+
+        <script>
+
+            
+
+            audio = new Audio("BoxCatGamesEpicSong.mp3");
+            audio.load();
+            audio2 = new Audio("BenJamminforBigBand.mp3");
+            audio2.load();
+            audio3 = new Audio("KurtWaltherEnergy.mp3");
+            audio3.load();
+
+            show("pagezero", "pageone", "pagetwo", "pagethree", "pagefour");
+
+
+                function show(shown, hidden, hidden2, hidden3, hidden4) {
+                document.getElementById(shown).style.display = 'block';
+                document.getElementById(hidden).style.display = 'none';
+                document.getElementById(hidden2).style.display = 'none';
+                document.getElementById(hidden3).style.display = 'none';
+                document.getElementById(hidden4).style.display = 'none';
+
+                return false;
+            }
+        </script>
+
+
+
+    </head>
+    <body onload="Start()">
+
+<!--fb sdk-->
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=602622669870104&autoLogAppEvents=1"></script>
+
+
+
+            <!-- content goes here-->
+        <div id="pagezero">
+
+                <img id="load" src="SplashScreen.scale-100.png" style="width:100%; height:100%;">
+                
+                <style>
+                    #load {
+                        position: fixed;
+                        display:block;
+                    }
+
+                </style>
+    </div>
+
+            <div id="pageone">
+                
+                    <img src="BlackBoard2.png" id="Title" style="width:100%; height:100%;">
+                    
+                    <style>
+                        #pageone{
+                        display:none;
+
+                        }
+                        #Title {
+                            position: fixed;
+                        }
+
+                        #Start {
+                            position: fixed;
+                            margin: 0;
+                            padding: 0;
+                            background-color: #ffffff;
+                        }
+
+                        #Banner {
+                            position: fixed;
+                        }
+                        #div{
+                            z-index: 999;
+                        }
+
+                        #like{
+                            position: fixed;
+                            z-index: 999;
+                        }
+                    </style>
+
+                    <div id="div" style="position: absolute;">
+                        <a onclick="show('pagetwo', 'pagezero', 'pagethree', 'pageone', 'pagefour');" id='Start' class="ui-btn">Start</a>
+                    </div>
+
+                    
+                        <img src="HoverboardTitle.png" id="Banner">
+                       
+                       
+                        <div id="like" class="fb-like" data-href="https://focusandfinish.000webhostapp.com/ICanRideTheHoverboard/index.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
+                
+                
+
+
+
+
+
+
+            </div>
+
+        <div id="pagetwo">
+            <div id="instructions">
+                <p>INSTRUCTIONS:</p>
+                <p></p>
+                <p>Use the Arrow keys or keys IJKL to move around.</p>
+                <p></p>
+                <p>Up/I: Accelerate towards the head of the figure.</p>
+                <p>Down/K: Accelerate away from the head towards the board.</p>
+                <p>Left/J: Rotate counter clockwise.</p>
+                <p>Right/L: Rotate clockwise.</p>
+                <p></p>
+                <p>Shoot laser beams with the X key and slow</p>
+                <p>down time by pressing Z on the keyboard.</p>
+                <p>Beat the enemy to get points and win the game. P to Pause and M to Mute.</p>
+            </div>
+
+            <img onload="text();" src="ThaiNguyenGarden.png" id="Title2">
+
+            <div id="div2" style="position: absolute;">
+                <a onclick="StartGame();" id='Go' class="ui-btn">Go</a>
+            </div>
+
+            <div id="div3" style="position: absolute;">
+                <a onclick="show('pageone', 'pagezero', 'pagethree', 'pagetwo', 'pagefour');" id='Back' class="ui-btn">Back</a>
+            </div>
+
+
+            <canvas id="canvas2"></canvas>
+
+            <style>
+                #pagetwo{
+                        display:none;
+
+                        }
+                #Title2 {
+                    position: fixed;
+                    z-index: 1;
+                }
+
+                #instructions {
+                    position: fixed;
+                    z-index: 3;
+                }
+
+                #Go {
+                    position: fixed;
+                    z-index: 999;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #ffffff;
+                }
+
+                #Back {
+                    position: fixed;
+                    z-index: 999;
+                    z-index: 4;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #ffffff;
+                }
+
+                #canvas2 {
+                    z-index: 2;
+                    position: fixed;
+                }
+
+
+                #like2 {
+                            position: fixed;
+                            z-index: 999;
+                        }
+            </style>
+
+<div id="like2" class="fb-like" data-href="https://focusandfinish.000webhostapp.com/ICanRideTheHoverboard/index.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
+           <!--  <div id="like2" class="fb-like" data-href="https://focusandfinish.000webhostapp.com/ICanRideTheHoverboard/index.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+ -->
+        </div>
+
+
+
+        <div id="pagethree">
+
+
+
+                <canvas id="canvas"></canvas> 
+                <style>
+                    #pagethree{
+                        display:none;
+
+                        }
+                    #canvas {
+                        position: fixed;
+                        z-index:3;
+                    }
+                    #div4 {
+                        position: fixed;
+                        z-index: 999;
+                    }
+                    #Back2 {
+                        position:static;
+                        margin: 0;
+                        padding: 0;
+                        background-color: #ffffff;
+                    }
+                </style>
+
+                
+                <audio controls="controls" loop="loop" hidden="hidden" id="audio">
+                    <source src="BoxCatGamesEpicSong.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            <div id="div4">
+                <a onclick="Back();" id='Back2' class="ui-btn">Back</a>
+            </div>
+        </div>
+
+
+
+        <div id="pagefour">
+
+                <img src="DucksInPon.png" id="GameOver" style="width:100%; height:100%;">
+                
+                <canvas id="canvas3"></canvas>
+                
+                <style>
+                    #pagefour{
+                        display:none;
+
+                        }
+                    #GameOver {
+                        position: fixed;
+                    }
+                    #canvas3 {
+                        position: fixed;
+                        z-index: 998;
+                    }
+                </style>
+
+            
+                <div id="ToHomePage" style="position: absolute;">
+                    <a onclick="window.location.href = 'http://focusandfinishgames.net'" id='tohomepage' class="ui-btn">To Home Page</a>
+                </div>
+                <div id="Again" style="position: absolute;">
+                    <a onclick="show('pageone', 'pagezero', 'pagethree', 'pagetwo', 'pagefour');" id='replay' class="ui-btn">Play Again</a>
+                </div>
+                <style>
+                    #PostScore {
+                        position:fixed;
+                        margin: 0;
+                        padding: 0;
+                        z-index: 999;
+                    }
+                    #replay {
+                        position:fixed;
+                        margin: 0;
+                        padding: 0;
+                        z-index: 999;
+                        background-color: #ffffff;
+                    }
+
+                        #like3{
+                            position: fixed;
+                            z-index: 999;
+                        }
+
+                        #tohomepage {
+                    position:fixed;
+                    margin: 0;
+                    padding: 0;
+                    z-index: 999;
+                    background-color: #ffffff;
+                }
+                </style>
+                
+                <div id="like3" class="fb-like" data-href="https://focusandfinish.000webhostapp.com/ICanRideTheHoverboard/index.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
+
+            <!-- <div id="like3" class="fb-like" data-href="https://focusandfinish.000webhostapp.com/ICanRideTheHoverboard/index.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+ -->
+            <!-- <div id="Post" style="position: absolute;">
+                <a onclick="postToFeed();" id='PostScore' class="ui-btn">Post Score on FB</a>
+            </div> -->
+
+            <!--altervista ad-->
+            <!-- <script>!function(d,l,e,s,c){e=d.createElement("script");e.src="//en.ad.altervista.org/js.ad/size=728X90/?ref="+encodeURIComponent(l.hostname+l.pathname)+"&r="+Date.now();s=d.scripts;c=d.currentScript||s[s.length-1];c.parentNode.insertBefore(e,c)}(document,location)</script>
+ -->
+            </div>
+
+
+
+
+        </body>
+    </html>
